@@ -2,8 +2,8 @@
 
 <p align="left">
   <img src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-5C3EE8?logo=opencv&logoColor=white" />
-  <img src="https://img.shields.io/badge/License-MIT-green" />
+  <img src="https://img.shields.io/badge/OpenCV-4.x-5C3EE8?logo=opencv&logoColor=white" />
+  <img src="https://img.shields.io/badge/Computer%20Vision-Project-orange" />
 </p>
 
 This project implements face detection using Python and OpenCV with Haar Cascade Classifier.
