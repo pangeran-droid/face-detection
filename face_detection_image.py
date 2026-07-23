@@ -29,6 +29,14 @@ for (x, y, w, h) in faces:
         2
     )
 
+# Save result
+cv2.imwrite(
+    "output/face_detection_result.jpg",
+    img
+)
+
+print("Image saved!")
+
 cv2.imshow(
     "Face Detection",
     img
