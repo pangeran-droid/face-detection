@@ -23,7 +23,6 @@ The program can detect faces from: Image input, Real-time camera/webcam
 - Eye detection from image
 - Real-time face detection using webcam
 - Graphical User Interface (GUI) for face tracking
-- Bounding box visualization
 
 ## Requirements
 - Python 3.x
@@ -54,6 +53,7 @@ face-detection/
 │
 └── output/
     └── face_detection_result.jpg
+    └── eye_detection_result.jpg
 ```
 
 ## How to Run
@@ -85,7 +85,6 @@ This project uses:
 - Grayscale conversion
 - Haar Cascade Classifier
 - Multi-scale detection
-- Bounding box visualization
 
 ## Detection Parameters
 The detection process uses:
