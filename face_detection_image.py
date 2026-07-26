@@ -1,6 +1,6 @@
 import cv2
 
-# Load the input image
+# Read image
 img = cv2.imread('image/faces.jpeg')
 
 # Convert the image to grayscale
