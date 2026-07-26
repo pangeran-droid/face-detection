@@ -1,21 +1,18 @@
 import cv2
 
 # Read image
-img = cv2.imread('image/faces.jpeg')
+img = cv2.imread("image/faces.jpeg")
 
 # Convert image to grayscale
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # Load the Haar cascade classifier for face detection
-face_cascade_path = 'haarcascade/haarcascade_frontalface_default.xml'
+face_cascade_path = "haarcascade/haarcascade_frontalface_default.xml"
 face_cascade = cv2.CascadeClassifier(face_cascade_path)
 
 # Face detection
 faces = face_cascade.detectMultiScale(
-    gray,
-    scaleFactor=1.1,
-    minNeighbors=5,
-    minSize=(40, 40)
+    gray, scaleFactor=1.1, minNeighbors=5, minSize=(40, 40)
 )
 
 print("Detected faces:", len(faces))

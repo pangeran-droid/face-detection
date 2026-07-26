@@ -4,7 +4,7 @@ import cv2
 cap = cv2.VideoCapture(0)
 
 # Load the Haar cascade classifier for face detection
-face_cascade_path = 'haarcascade/haarcascade_frontalface_default.xml'
+face_cascade_path = "haarcascade/haarcascade_frontalface_default.xml"
 face_cascade = cv2.CascadeClassifier(face_cascade_path)
 
 while True:
@@ -20,10 +20,7 @@ while True:
 
     # Detect faces in the frame
     faces = face_cascade.detectMultiScale(
-        gray,
-        scaleFactor=1.1,
-        minNeighbors=5,
-        minSize=(40, 40)
+        gray, scaleFactor=1.1, minNeighbors=5, minSize=(40, 40)
     )
 
     print(f"\rDetected faces: {len(faces)}", end="")

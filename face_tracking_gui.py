@@ -1,9 +1,10 @@
-import cv2
 import tkinter as tk
+
+import cv2
 from PIL import Image, ImageTk
 
 # Load Haar Cascade classifier for face detection
-face_cascade_path = 'haarcascade/haarcascade_frontalface_default.xml'
+face_cascade_path = "haarcascade/haarcascade_frontalface_default.xml"
 face_cascade = cv2.CascadeClassifier(face_cascade_path)
 
 # Initialize global video capture variables
@@ -19,6 +20,7 @@ def start_camera():
         running = True
         update_frame()
 
+
 # Read and process frames from the camera feed
 def update_frame():
     global cap, running
@@ -31,10 +33,7 @@ def update_frame():
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
             faces = face_cascade.detectMultiScale(
-                gray,
-                scaleFactor=1.1,
-                minNeighbors=5,
-                minSize=(40, 40)
+                gray, scaleFactor=1.1, minNeighbors=5, minSize=(40, 40)
             )
 
             # Update the real-time face count on the GUI label
@@ -55,6 +54,7 @@ def update_frame():
 
         window.after(10, update_frame)
 
+
 # Stop video capture stream
 def stop_camera():
     global running, cap
@@ -68,10 +68,12 @@ def stop_camera():
         # Reset the face count label to 0 when the camera stops
         count_label.config(text="Detected Faces: 0")
 
+
 # Close application safely
 def exit_app():
     stop_camera()
     window.destroy()
+
 
 # GUI Window Setup
 window = tk.Tk()
