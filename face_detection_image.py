@@ -1,16 +1,16 @@
 import cv2
 
+# Load the input image
 img = cv2.imread('image/faces.jpeg')
 
-gray = cv2.cvtColor(
-    img,
-    cv2.COLOR_BGR2GRAY
-)
+# Convert the image to grayscale
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-path = 'haarcascade/haarcascade_frontalface_default.xml'
+# Load the Haar cascade classifier for face detection
+face_cascade_path = 'haarcascade/haarcascade_frontalface_default.xml'
+face_cascade = cv2.CascadeClassifier(face_cascade_path)
 
-face_cascade = cv2.CascadeClassifier(path)
-
+# Detect faces in the grayscale image
 faces = face_cascade.detectMultiScale(
     gray,
     scaleFactor=1.1,
@@ -20,27 +20,15 @@ faces = face_cascade.detectMultiScale(
 
 print("Detected faces:", len(faces))
 
+# Draw bounding boxes around the detected faces
 for (x, y, w, h) in faces:
-    cv2.rectangle(
-        img,
-        (x, y),
-        (x + w, y + h),
-        (0, 255, 0),
-        2
-    )
+    cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-# Save result
-cv2.imwrite(
-    "output/face_detection_result.jpg",
-    img
-)
-
+# Save the output image
+cv2.imwrite("output/face_detection_result.jpg", img)
 print("Image saved!")
 
-cv2.imshow(
-    "Face Detection",
-    img
-)
-
+# Display the result in a window
+cv2.imshow("Face Detection", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
